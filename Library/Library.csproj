@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\DocGiaController.cs" />
+    <Compile Include="DangKySach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangKySach.Designer.cs">
+      <DependentUpon>DangKySach.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataProvider.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -55,19 +61,25 @@
     </Compile>
     <Compile Include="Models\DocGia.cs" />
     <Compile Include="Models\Sach.cs" />
+    <Compile Include="MuonSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MuonSach.Designer.cs">
+      <DependentUpon>MuonSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyDauSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyDauSach.Designer.cs">
+      <DependentUpon>QuanLyDauSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyDocGia.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuanLyDocGia.Designer.cs">
       <DependentUpon>QuanLyDocGia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLySach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLySach.Designer.cs">
-      <DependentUpon>QuanLySach.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemDocGia.cs">
       <SubType>Form</SubType>
@@ -75,8 +87,20 @@
     <Compile Include="ThemDocGia.Designer.cs">
       <DependentUpon>ThemDocGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="TraSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TraSach.Designer.cs">
+      <DependentUpon>TraSach.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DangKySach.resx">
+      <DependentUpon>DangKySach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MuonSach.resx">
+      <DependentUpon>MuonSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,14 +111,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QuanLyDauSach.resx">
+      <DependentUpon>QuanLyDauSach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyDocGia.resx">
       <DependentUpon>QuanLyDocGia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySach.resx">
-      <DependentUpon>QuanLySach.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ThemDocGia.resx">
       <DependentUpon>ThemDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraSach.resx">
+      <DependentUpon>TraSach.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -109,7 +136,51 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\AAEAAQAAAAAAAALjAAAAJDVlZDJmMDYwLTQyNjMtNDc5ZS1hOWJhLTA5Mzk0OWRmNmNjZQ.png" />
+    <Content Include="Resources\AAEAAQAAAAAAAALjAAAAJDVlZDJmMDYwLTQyNjMtNDc5ZS1hOWJhLTA5Mzk0OWRmNmNjZQ1.png" />
+    <Content Include="Resources\AAEAAQAAAAAAAALjAAAAJDVlZDJmMDYwLTQyNjMtNDc5ZS1hOWJhLTA5Mzk0OWRmNmNjZQ2.png" />
+    <Content Include="Resources\AAEAAQAAAAAAAALjAAAAJDVlZDJmMDYwLTQyNjMtNDc5ZS1hOWJhLTA5Mzk0OWRmNmNjZQ3.png" />
+    <Content Include="Resources\Activities.png" />
+    <Content Include="Resources\checklist_todo-512.png" />
+    <Content Include="Resources\checklist_todo-5121.png" />
+    <Content Include="Resources\Coin_stack_icon_GOLD-01.svg.png" />
+    <Content Include="Resources\images %281%29.jpg" />
+    <Content Include="Resources\images.jpg" />
+    <Content Include="Resources\images.png" />
+    <Content Include="Resources\images1.png" />
+    <Content Include="Resources\iStock_000006459776XSmall.jpg" />
+    <Content Include="Resources\Leftcolumn.png" />
+    <Content Include="Resources\open-icon.png" />
+    <Content Include="Resources\pie.png" />
+    <Content Include="Resources\Product-Icon-100x100.png" />
+    <Content Include="Resources\product-icon.png" />
+    <Content Include="Resources\product-icon1.png" />
+    <Content Include="Resources\product-icon2.png" />
+    <Content Include="Resources\product.png" />
+    <Content Include="Resources\resource-icon-case-studies.png" />
+    <Content Include="Resources\resource-icon-case-studies1.png" />
+    <Content Include="Resources\resource-icon-case-studies2.png" />
+    <Content Include="Resources\resource-icon-case-studies3.png" />
+    <Content Include="Resources\resource-icon-case-studies4.png" />
+    <Content Include="Resources\rightcolumn.jpg" />
+    <Content Include="Resources\rightcolumn.png" />
+    <Content Include="Resources\sale.png" />
+    <Content Include="Resources\shopping_cart.png" />
+    <Content Include="Resources\Taskbar.png" />
+    <Content Include="Resources\Taskbar1.png" />
+    <Content Include="Resources\Taskbar2.png" />
+    <Content Include="Resources\vendors-icon %281%29.jpg" />
+    <Content Include="Resources\vendors-icon %282%29.jpg" />
+    <Content Include="Resources\vendors-icon.jpg" />
+    <Content Include="Resources\vendors-icon1.jpg" />
+    <Content Include="Resources\vendors-icon2.jpg" />
+    <Content Include="Resources\vendors-icon3.jpg" />
+    <Content Include="Resources\vendors-icon4.jpg" />
+    <Content Include="Resources\volume-down.png" />
+    <Content Include="Resources\Warehouse-icon.png" />
+    <Content Include="Resources\越南-4.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

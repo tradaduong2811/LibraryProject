@@ -16,5 +16,11 @@ namespace Library
         {
             InitializeComponent();
         }
+
+        private void btnThemMoi_Click(object sender, EventArgs e)
+        {
+            // Thêm mới đọc giả
+            // Automatical gán Mã cho đọc giả (nhờ Database)
+        }
     }
 }

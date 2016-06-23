@@ -16,5 +16,30 @@ namespace Library
         {
             InitializeComponent();
         }
+
+
+        /// <summary>
+        /// Hiển thị màn hình quản lý đầu sách
+        /// 16-06-2016
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void quảnLýSáchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuanLyDauSach MH_QuanLyDauSach = new QuanLyDauSach();
+            MH_QuanLyDauSach.Show();
+        }
+
+        /// <summary>
+        /// Hiển thị màn hình quản lý Đọc giả
+        /// 16-06-2016
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void quảnLýĐọcGiảToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuanLyDocGia MH_QuanLyDocGia = new QuanLyDocGia();
+            MH_QuanLyDocGia.Show();
+        }
     }
 }
