@@ -33,21 +33,21 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbDienThoai = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbQuan = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbDuong = new System.Windows.Forms.TextBox();
+            this.tbSoNha = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbTen = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbTenLot = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbHo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDocGia = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -55,7 +55,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_ThemMoi = new System.Windows.Forms.ToolStripButton();
             this.SBtnChinhSua = new System.Windows.Forms.ToolStripButton();
-            this.btn_Xoa = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cậpNhậtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -110,21 +110,21 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.tbDienThoai);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.tbQuan);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.tbDuong);
+            this.groupBox1.Controls.Add(this.tbSoNha);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.tbTen);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.tbTenLot);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbHo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(581, 69);
             this.groupBox1.Name = "groupBox1";
@@ -133,12 +133,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin cá nhân";
             // 
-            // textBox7
+            // tbDienThoai
             // 
-            this.textBox7.Location = new System.Drawing.Point(236, 134);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(151, 20);
-            this.textBox7.TabIndex = 31;
+            this.tbDienThoai.Location = new System.Drawing.Point(236, 134);
+            this.tbDienThoai.Name = "tbDienThoai";
+            this.tbDienThoai.ReadOnly = true;
+            this.tbDienThoai.Size = new System.Drawing.Size(151, 20);
+            this.tbDienThoai.TabIndex = 31;
             // 
             // label8
             // 
@@ -149,12 +150,13 @@
             this.label8.TabIndex = 30;
             this.label8.Text = "Điện thoại";
             // 
-            // textBox6
+            // tbQuan
             // 
-            this.textBox6.Location = new System.Drawing.Point(67, 134);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(54, 20);
-            this.textBox6.TabIndex = 29;
+            this.tbQuan.Location = new System.Drawing.Point(67, 134);
+            this.tbQuan.Name = "tbQuan";
+            this.tbQuan.ReadOnly = true;
+            this.tbQuan.Size = new System.Drawing.Size(54, 20);
+            this.tbQuan.TabIndex = 29;
             // 
             // label7
             // 
@@ -165,19 +167,21 @@
             this.label7.TabIndex = 28;
             this.label7.Text = "Quận";
             // 
-            // textBox5
+            // tbDuong
             // 
-            this.textBox5.Location = new System.Drawing.Point(209, 101);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(178, 20);
-            this.textBox5.TabIndex = 27;
+            this.tbDuong.Location = new System.Drawing.Point(209, 101);
+            this.tbDuong.Name = "tbDuong";
+            this.tbDuong.ReadOnly = true;
+            this.tbDuong.Size = new System.Drawing.Size(178, 20);
+            this.tbDuong.TabIndex = 27;
             // 
-            // textBox4
+            // tbSoNha
             // 
-            this.textBox4.Location = new System.Drawing.Point(67, 101);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(54, 20);
-            this.textBox4.TabIndex = 26;
+            this.tbSoNha.Location = new System.Drawing.Point(67, 101);
+            this.tbSoNha.Name = "tbSoNha";
+            this.tbSoNha.ReadOnly = true;
+            this.tbSoNha.Size = new System.Drawing.Size(54, 20);
+            this.tbSoNha.TabIndex = 26;
             // 
             // label6
             // 
@@ -208,17 +212,19 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Location = new System.Drawing.Point(67, 63);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(215, 20);
             this.dateTimePicker1.TabIndex = 22;
             // 
-            // textBox3
+            // tbTen
             // 
-            this.textBox3.Location = new System.Drawing.Point(333, 29);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(54, 20);
-            this.textBox3.TabIndex = 21;
+            this.tbTen.Location = new System.Drawing.Point(333, 29);
+            this.tbTen.Name = "tbTen";
+            this.tbTen.ReadOnly = true;
+            this.tbTen.Size = new System.Drawing.Size(54, 20);
+            this.tbTen.TabIndex = 21;
             // 
             // label3
             // 
@@ -229,12 +235,13 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "Tên";
             // 
-            // textBox2
+            // tbTenLot
             // 
-            this.textBox2.Location = new System.Drawing.Point(192, 29);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(90, 20);
-            this.textBox2.TabIndex = 19;
+            this.tbTenLot.Location = new System.Drawing.Point(192, 29);
+            this.tbTenLot.Name = "tbTenLot";
+            this.tbTenLot.ReadOnly = true;
+            this.tbTenLot.Size = new System.Drawing.Size(90, 20);
+            this.tbTenLot.TabIndex = 19;
             // 
             // label2
             // 
@@ -245,12 +252,13 @@
             this.label2.TabIndex = 18;
             this.label2.Text = "Tên lót";
             // 
-            // textBox1
+            // tbHo
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(73, 20);
-            this.textBox1.TabIndex = 17;
+            this.tbHo.Location = new System.Drawing.Point(67, 29);
+            this.tbHo.Name = "tbHo";
+            this.tbHo.ReadOnly = true;
+            this.tbHo.Size = new System.Drawing.Size(73, 20);
+            this.tbHo.TabIndex = 17;
             // 
             // label1
             // 
@@ -266,8 +274,11 @@
             this.dgvDocGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDocGia.Location = new System.Drawing.Point(12, 69);
             this.dgvDocGia.Name = "dgvDocGia";
+            this.dgvDocGia.ReadOnly = true;
+            this.dgvDocGia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDocGia.Size = new System.Drawing.Size(563, 186);
             this.dgvDocGia.TabIndex = 5;
+            this.dgvDocGia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDocGia_CellClick);
             // 
             // dataGridView2
             // 
@@ -294,7 +305,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_ThemMoi,
             this.SBtnChinhSua,
-            this.btn_Xoa,
+            this.toolStripButton1,
             this.toolStripSeparator1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
@@ -316,13 +327,14 @@
             this.SBtnChinhSua.Name = "SBtnChinhSua";
             this.SBtnChinhSua.Size = new System.Drawing.Size(64, 22);
             this.SBtnChinhSua.Text = "Chỉnh sửa";
+            this.SBtnChinhSua.Click += new System.EventHandler(this.SBtnChinhSua_Click);
             // 
-            // btn_Xoa
+            // toolStripButton1
             // 
-            this.btn_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(31, 22);
-            this.btn_Xoa.Text = "Xóa";
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(31, 22);
+            this.toolStripButton1.Text = "Xóa";
             // 
             // toolStripSeparator1
             // 
@@ -397,21 +409,21 @@
         private System.Windows.Forms.DataGridView dgvDocGia;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btnXacNhan;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbDienThoai;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbQuan;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbDuong;
+        private System.Windows.Forms.TextBox tbSoNha;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbTen;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbTenLot;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbHo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -419,11 +431,11 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btn_ThemMoi;
         private System.Windows.Forms.ToolStripButton SBtnChinhSua;
-        private System.Windows.Forms.ToolStripButton btn_Xoa;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem thêmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cậpNhậtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

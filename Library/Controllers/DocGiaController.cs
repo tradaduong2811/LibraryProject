@@ -14,34 +14,36 @@ namespace Library.Controllers
     /// </summary>
     public class DocGiaController
     {
-        private DataProvider dp;
-        public DocGiaController()
-        {
-            dp = new DataProvider();
-        }
+        //private DataProvider dp;
+        //public DocGiaController()
+        //{
+        //    dp = new DataProvider();
+        //}
         public List<DocGia> loadDocGia()
         {
             List<DocGia> listDocGia = new List<DocGia>();
-            DataTable dt_DocGia = new DataTable();
+            //DataTable dt_DocGia = new DataTable();
+            SqlConnection con = new SqlConnection();
+            con = Provider.ConnectionData();
+            SqlCommand cmd = new SqlCommand("sp_DanhSachDocGia", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader dr_DocGia = cmd.ExecuteReader();
 
-            string strSQL;
-
-            strSQL = "select * from DocGia";
-            SqlDataAdapter da_DocGia = new SqlDataAdapter(strSQL, dp.con);
-            da_DocGia.Fill(dt_DocGia);
-
-            foreach (DataRow dr in dt_DocGia.Rows)
+            while(dr_DocGia.Read())
             {
                 DocGia dg = new DocGia();
-                dg.DocGiaId =   int.Parse(dr["ma_docgia"].ToString());
-                dg.Ho = dr["ho"].ToString();
-                dg.Ten = dr["ten"].ToString(); 
-                dg.TenLot = dr["tenlot"].ToString();
+                dg.DocGiaId =   int.Parse(dr_DocGia["ma_docgia"].ToString());
+                dg.Ho =         dr_DocGia["ho"].ToString();
+                dg.TenLot =     dr_DocGia["tenlot"].ToString();
+                dg.Ten =        dr_DocGia["ten"].ToString();
+                dg.Duong =      dr_DocGia["duong"].ToString();
+                dg.SoNha =      dr_DocGia["sonha"].ToString();
+                dg.Quan =       dr_DocGia["quan"].ToString();
+                dg.DienThoai =  dr_DocGia["dienthoai"].ToString();
+                //dg.MaNguoiLon = int.Parse(dr_DocGia["manguoilon"].ToString());
                 //dg.NgaySinh = DateTime.Parse(dr["NgaySinh"].ToString());
                 listDocGia.Add(dg);
             }
-
-
             return listDocGia;
         }
     }
