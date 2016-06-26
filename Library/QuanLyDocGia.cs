@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,19 @@ namespace Library
         public QuanLyDocGia()
         {
             InitializeComponent();
+            loadDocGia();
+        }
+
+
+        /// <summary>
+        /// Init Controller
+        /// </summary>
+
+        DocGiaController DocGiaController = new DocGiaController();
+
+        private void loadDocGia()
+        {
+            dgvDocGia.DataSource = DocGiaController.loadDocGia();
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)
@@ -35,6 +49,11 @@ namespace Library
             // Hiển thị màn hình Thêm mới đọc giả
             ThemDocGia MH_ThemDocGia = new ThemDocGia();
             MH_ThemDocGia.ShowDialog();
+        }
+
+        private void QuanLyDocGia_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

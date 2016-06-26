@@ -8,7 +8,34 @@ namespace Library.Models
 {
     public class Sach
     {
-        public int SachId { get; set; }
-        public string TenSach { get; set; }
+        private int _TuaSachId;
+        private int _Isbn;
+        private string _NgonNgu;
+        private char _TrangThai;
+
+        public char TrangThai
+        {
+            get { return _TrangThai; }
+            set { _TrangThai = value; }
+        }
+        public int Isbn
+        {
+            get { return _Isbn; }
+            set { _Isbn = value; }
+        }
+        
+
+        public string NgonNgu
+        {
+            get { return _NgonNgu; }
+            set { _NgonNgu = value; }
+        }
+
+  
+        public int TuaSachId
+        {
+            get { return _TuaSachId; }
+            set { _TuaSachId = value; }
+        }
     }
 }

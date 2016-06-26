@@ -60,6 +60,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\DocGia.cs" />
+    <Compile Include="Models\DocGiaNguoiLon.cs" />
+    <Compile Include="Models\DocGiaTreEm.cs" />
     <Compile Include="Models\Sach.cs" />
     <Compile Include="MuonSach.cs">
       <SubType>Form</SubType>
