@@ -37,10 +37,66 @@ namespace Library.Controllers
                 dg.Quan =       dr_DocGia["quan"].ToString();
                 dg.DienThoai =  dr_DocGia["dienthoai"].ToString();
                 //dg.MaNguoiLon = int.Parse(dr_DocGia["manguoilon"].ToString());
-                //dg.NgaySinh = DateTime.Parse(dr["NgaySinh"].ToString());
+                if (dr_DocGia["NgaySinh"].ToString() != "")
+                {
+                    dg.NgaySinh = DateTime.Parse(dr_DocGia["NgaySinh"].ToString());
+                }
                 listDocGia.Add(dg);
             }
             return listDocGia;
+        }
+
+
+        public bool updateDocGia(int id, string Ho, string TenLot, string Ten, string SoNha,
+                            string Duong, string Quan, string DienThoai)
+        {
+            return true;
+        }
+
+
+
+        public void themNguoiLon(string Ho, string TenLot, string Ten, DateTime NgaySinh, string SoNha, 
+                                    string Duong, string Quan, string DienThoai)
+        {
+            SqlConnection con = new SqlConnection();
+            con = Provider.ConnectionData();
+            SqlCommand cmd = new SqlCommand("sp_ThemNguoilon", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            // Khai báo Parameters
+            cmd.Parameters.Add("@param_ho", Ho);
+            cmd.Parameters.Add("@param_tenlot", TenLot);
+            cmd.Parameters.Add("@param_ten", Ten);
+            cmd.Parameters.Add("@param_sonha", SoNha);
+            cmd.Parameters.Add("@param_duong", Duong);
+            cmd.Parameters.Add("@param_quan", Quan);
+            cmd.Parameters.Add("@param_ngaysinh", NgaySinh);
+            cmd.Parameters.Add("@param_han_sd", DateTime.Now.AddYears(1));
+            cmd.Parameters.Add("@param_dienthoai", DienThoai);
+
+            cmd.ExecuteNonQuery();  
+        }
+
+        public void themTreEm()
+        {
+            
+        }
+
+        public void themTreEm(string Ho, string TenLot, string Ten, DateTime NgaySinh, int NguoiLonId)
+        {
+            SqlConnection con = new SqlConnection();
+            con = Provider.ConnectionData();
+            SqlCommand cmd = new SqlCommand("sp_ThemTreEm", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            // Khai báo Parameters
+            cmd.Parameters.Add("@param_ho", Ho);
+            cmd.Parameters.Add("@param_tenlot", TenLot);
+            cmd.Parameters.Add("@param_ten", Ten);
+            cmd.Parameters.Add("@param_ngaysinh", NgaySinh);
+            cmd.Parameters.Add("@param_MaNguoiLon", NguoiLonId);
+            //cmd.Parameters.Add("@param_han_sd", DateTime.Now.AddYears(1));
+            cmd.ExecuteNonQuery();  
         }
     }
 }

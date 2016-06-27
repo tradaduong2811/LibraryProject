@@ -59,6 +59,8 @@ namespace Library
                 dgvDocGia.Columns[7].Width = 100;
                 dgvDocGia.Columns[8].Visible = false; // Ẩn mã người lớn
 
+                dgvDocGia.Columns[9].HeaderText = "Ngày sinh";
+
             }
             
         }
@@ -67,6 +69,9 @@ namespace Library
         {
             // Xác nhận cập nhật thông tin đọc giả khi users nhấn vào "Cập nhật" trên
             // thanh taskbar
+            MessageBox.Show("Chỉnh sửa thành công!");
+            loadDocGia();
+                        
 
         }
 
@@ -98,6 +103,12 @@ namespace Library
             {
                 tbHo.Text = dgvDocGia.SelectedRows[i].Cells[1].Value.ToString();
                 tbTenLot.Text = dgvDocGia.SelectedRows[i].Cells[2].Value.ToString();
+                if (dgvDocGia.SelectedRows[i].Cells[9].Value != null)
+                {
+                    //tbHo.Text = DateTime.Parse(dgvDocGia.SelectedRows[i].Cells[8].Value.ToString());
+                    tbNgaySinh.Value = DateTime.Parse(dgvDocGia.SelectedRows[i].Cells[9].Value.ToString());
+                }
+                    
                 tbTen.Text = dgvDocGia.SelectedRows[i].Cells[3].Value.ToString();
                 tbSoNha.Text = dgvDocGia.SelectedRows[i].Cells[4].Value.ToString();
                 tbDuong.Text = dgvDocGia.SelectedRows[i].Cells[5].Value.ToString();
@@ -117,6 +128,7 @@ namespace Library
             tbDuong.ReadOnly = stat;
             tbQuan.ReadOnly = stat;
             tbDienThoai.ReadOnly = stat;
+            tbNgaySinh.Enabled = !stat;
             btnXacNhan.Enabled = !stat;
         }
         private void SBtnChinhSua_Click(object sender, EventArgs e)
@@ -127,8 +139,36 @@ namespace Library
             if (dialogresult == DialogResult.OK)
             {
                 //int result = VendorsController.removeVendor(VendorId);
+                
                 ReadOnlyStatus(false);
 
+            }
+        }
+
+        private void tsbtnXoa_Click(object sender, EventArgs e)
+        {
+            string DocGiaId = "123";
+            DialogResult dialogresult = MessageBox.Show("Bạn có muốn xóa đọc giả " + DocGiaId + " không?",
+                                               "Xóa?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning,
+                                               MessageBoxDefaultButton.Button2);
+            if (dialogresult == DialogResult.OK)
+            {
+                int result = 1;
+                if (result == 0)
+                {
+                    MessageBox.Show("Đọc giả Mã số " + DocGiaId + " không thể xóa.",
+                    "Cảnh cáo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Stop);
+                }
+                if (result == 1)
+                {
+                    MessageBox.Show("Đã xóa đọc giả Mã số " + DocGiaId + ".", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    // cập nhật lại danh sách nhà cung cấp
+                    loadDocGia();
+                    dgvDocGia.Update();
+                    dgvDocGia.Refresh();
+                }
             }
         }
     }

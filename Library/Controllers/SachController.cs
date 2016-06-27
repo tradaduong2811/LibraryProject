@@ -46,5 +46,24 @@ namespace Library.Controllers
 
             return listSach;
         }
+
+
+        public bool muonSach(int DocGiaId, int isbn, int SachId)
+        {
+            SqlConnection con = new SqlConnection();
+            con = Provider.ConnectionData();
+
+            SqlCommand cmd = new SqlCommand("sp_MuonSach", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlParameter sqlParam = new SqlParameter();
+            cmd.Parameters.Add(new SqlParameter("@param_MaDocGia", DocGiaId));
+            cmd.Parameters.Add(new SqlParameter("@param_isbn", isbn));
+
+            // Gán parameter cho store procedure
+            // chưa biết sử dụng Adapter nào cho phù hợp
+            cmd.ExecuteNonQuery();
+            return true;
+
+        }
     }
 }

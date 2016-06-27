@@ -18,6 +18,11 @@ namespace Library.Models
         private string _Quan;
         private string _DienThoai;
         private int _NguoiLonId;
+
+        private DateTime? _NgaySinh;
+
+
+        
         public int DocGiaId
         {
             get { return _DocGiaId; }
@@ -76,10 +81,10 @@ namespace Library.Models
         }
 
 
-        //public DateTime NgaySinh
-        //{
-        //    get { return _NgaySinh; }
-        //    set { _NgaySinh = value; }
-        //}
+        public DateTime? NgaySinh
+        {
+            get { return _NgaySinh; }
+            set { _NgaySinh = value; }
+        }
     }
 }

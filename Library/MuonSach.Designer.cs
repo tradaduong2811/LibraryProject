@@ -140,7 +140,7 @@
             // 
             // tbDocGiaId
             // 
-            this.tbDocGiaId.Location = new System.Drawing.Point(377, 41);
+            this.tbDocGiaId.Location = new System.Drawing.Point(377, 38);
             this.tbDocGiaId.Name = "tbDocGiaId";
             this.tbDocGiaId.Size = new System.Drawing.Size(82, 20);
             this.tbDocGiaId.TabIndex = 16;
@@ -148,7 +148,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(301, 44);
+            this.label5.Location = new System.Drawing.Point(301, 41);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 13);
             this.label5.TabIndex = 17;

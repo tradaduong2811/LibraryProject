@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,13 +18,22 @@ namespace Library
             InitializeComponent();
         }
 
+        // Controller
+        private SachController SachControler = new SachController();
+
+
         private void btnKiemTra_Click(object sender, EventArgs e)
         {
             // Kiểm tra thông tin đọc giả
+            btnMuonSach.Enabled = true;
         }
 
         private void btnMuonSach_Click(object sender, EventArgs e)
         {
+            if (SachControler.muonSach(int.Parse(tbDocGiaId.Text), QuanLyDauSach.isbnTransition, QuanLyDauSach.SachIdTransition) == true)
+            {
+                MessageBox.Show("Độc giả " + tbDocGiaId.Text + " đã mượn sách Thành công.", "Thống báo", MessageBoxButtons.OK);
+            }
             // Xác nhận mượn sách
         }
 

@@ -42,7 +42,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.tbNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.tbTen = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tbTenLot = new System.Windows.Forms.TextBox();
@@ -55,7 +55,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_ThemMoi = new System.Windows.Forms.ToolStripButton();
             this.SBtnChinhSua = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnXoa = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cậpNhậtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -119,7 +119,7 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.tbNgaySinh);
             this.groupBox1.Controls.Add(this.tbTen);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.tbTenLot);
@@ -210,13 +210,13 @@
             this.label4.TabIndex = 23;
             this.label4.Text = "Ngày sinh";
             // 
-            // dateTimePicker1
+            // tbNgaySinh
             // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(67, 63);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(215, 20);
-            this.dateTimePicker1.TabIndex = 22;
+            this.tbNgaySinh.Enabled = false;
+            this.tbNgaySinh.Location = new System.Drawing.Point(67, 63);
+            this.tbNgaySinh.Name = "tbNgaySinh";
+            this.tbNgaySinh.Size = new System.Drawing.Size(215, 20);
+            this.tbNgaySinh.TabIndex = 22;
             // 
             // tbTen
             // 
@@ -305,7 +305,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_ThemMoi,
             this.SBtnChinhSua,
-            this.toolStripButton1,
+            this.tsbtnXoa,
             this.toolStripSeparator1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
@@ -329,12 +329,13 @@
             this.SBtnChinhSua.Text = "Chỉnh sửa";
             this.SBtnChinhSua.Click += new System.EventHandler(this.SBtnChinhSua_Click);
             // 
-            // toolStripButton1
+            // tsbtnXoa
             // 
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(31, 22);
-            this.toolStripButton1.Text = "Xóa";
+            this.tsbtnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnXoa.Name = "tsbtnXoa";
+            this.tsbtnXoa.Size = new System.Drawing.Size(31, 22);
+            this.tsbtnXoa.Text = "Xóa";
+            this.tsbtnXoa.Click += new System.EventHandler(this.tsbtnXoa_Click);
             // 
             // toolStripSeparator1
             // 
@@ -418,7 +419,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker tbNgaySinh;
         private System.Windows.Forms.TextBox tbTen;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbTenLot;
@@ -436,6 +437,6 @@
         private System.Windows.Forms.ToolStripMenuItem cậpNhậtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton tsbtnXoa;
     }
 }
