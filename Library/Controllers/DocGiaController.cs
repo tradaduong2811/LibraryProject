@@ -14,11 +14,7 @@ namespace Library.Controllers
     /// </summary>
     public class DocGiaController
     {
-        //private DataProvider dp;
-        //public DocGiaController()
-        //{
-        //    dp = new DataProvider();
-        //}
+
         public List<DocGia> loadDocGia()
         {
             List<DocGia> listDocGia = new List<DocGia>();

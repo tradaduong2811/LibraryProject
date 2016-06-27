@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbBiaSach = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbNgonNgu = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbTacGia = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbTuaSach = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbDocGiaId = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnKiemTra = new System.Windows.Forms.Button();
             this.btnMuonSach = new System.Windows.Forms.Button();
@@ -54,13 +54,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.tbBiaSach);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.tbNgonNgu);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.tbTacGia);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.tbTuaSach);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 74);
             this.groupBox1.Name = "groupBox1";
@@ -69,12 +69,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin Sách";
             // 
-            // textBox6
+            // tbBiaSach
             // 
-            this.textBox6.Location = new System.Drawing.Point(83, 134);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(123, 20);
-            this.textBox6.TabIndex = 7;
+            this.tbBiaSach.Location = new System.Drawing.Point(83, 134);
+            this.tbBiaSach.Name = "tbBiaSach";
+            this.tbBiaSach.ReadOnly = true;
+            this.tbBiaSach.Size = new System.Drawing.Size(123, 20);
+            this.tbBiaSach.TabIndex = 7;
             // 
             // label6
             // 
@@ -85,12 +86,13 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Bìa sách";
             // 
-            // textBox4
+            // tbNgonNgu
             // 
-            this.textBox4.Location = new System.Drawing.Point(83, 108);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(90, 20);
-            this.textBox4.TabIndex = 1;
+            this.tbNgonNgu.Location = new System.Drawing.Point(83, 108);
+            this.tbNgonNgu.Name = "tbNgonNgu";
+            this.tbNgonNgu.ReadOnly = true;
+            this.tbNgonNgu.Size = new System.Drawing.Size(90, 20);
+            this.tbNgonNgu.TabIndex = 1;
             // 
             // label4
             // 
@@ -101,12 +103,13 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Ngôn ngữ";
             // 
-            // textBox3
+            // tbTacGia
             // 
-            this.textBox3.Location = new System.Drawing.Point(83, 82);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(233, 20);
-            this.textBox3.TabIndex = 3;
+            this.tbTacGia.Location = new System.Drawing.Point(83, 82);
+            this.tbTacGia.Name = "tbTacGia";
+            this.tbTacGia.ReadOnly = true;
+            this.tbTacGia.Size = new System.Drawing.Size(233, 20);
+            this.tbTacGia.TabIndex = 3;
             // 
             // label2
             // 
@@ -117,13 +120,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Tác giả";
             // 
-            // textBox2
+            // tbTuaSach
             // 
-            this.textBox2.Location = new System.Drawing.Point(83, 24);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(233, 52);
-            this.textBox2.TabIndex = 1;
+            this.tbTuaSach.Location = new System.Drawing.Point(83, 24);
+            this.tbTuaSach.Multiline = true;
+            this.tbTuaSach.Name = "tbTuaSach";
+            this.tbTuaSach.ReadOnly = true;
+            this.tbTuaSach.Size = new System.Drawing.Size(233, 52);
+            this.tbTuaSach.TabIndex = 1;
             // 
             // label1
             // 
@@ -134,12 +138,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tựa sách";
             // 
-            // textBox1
+            // tbDocGiaId
             // 
-            this.textBox1.Location = new System.Drawing.Point(377, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(82, 20);
-            this.textBox1.TabIndex = 16;
+            this.tbDocGiaId.Location = new System.Drawing.Point(377, 41);
+            this.tbDocGiaId.Name = "tbDocGiaId";
+            this.tbDocGiaId.Size = new System.Drawing.Size(82, 20);
+            this.tbDocGiaId.TabIndex = 16;
             // 
             // label5
             // 
@@ -243,10 +247,11 @@
             this.Controls.Add(this.btnMuonSach);
             this.Controls.Add(this.btnKiemTra);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbDocGiaId);
             this.Controls.Add(this.groupBox1);
             this.Name = "MuonSach";
             this.Text = "Mượn sách";
+            this.Load += new System.EventHandler(this.MuonSach_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -259,15 +264,15 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbBiaSach;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbNgonNgu;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbTacGia;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbTuaSach;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbDocGiaId;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnKiemTra;
         private System.Windows.Forms.Button btnMuonSach;

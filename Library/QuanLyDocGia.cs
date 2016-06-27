@@ -128,8 +128,7 @@ namespace Library
             {
                 //int result = VendorsController.removeVendor(VendorId);
                 ReadOnlyStatus(false);
-                
-                
+
             }
         }
     }

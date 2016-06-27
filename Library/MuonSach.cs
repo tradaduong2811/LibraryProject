@@ -26,5 +26,18 @@ namespace Library
         {
             // Xác nhận mượn sách
         }
+
+        private void loadChiTietSach()
+        {
+            tbTuaSach.Text = QuanLyDauSach.TuaSachTransition;
+            tbTacGia.Text = QuanLyDauSach.TacGiaTransition;
+            tbNgonNgu.Text = QuanLyDauSach.NgonNguTransition;
+        }
+
+
+        private void MuonSach_Load(object sender, EventArgs e)
+        {
+            loadChiTietSach();
+        }
     }
 }
