@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnThemTreEm = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -56,12 +55,12 @@
             this.btn_ThemMoi = new System.Windows.Forms.ToolStripButton();
             this.SBtnChinhSua = new System.Windows.Forms.ToolStripButton();
             this.tsbtnXoa = new System.Windows.Forms.ToolStripButton();
+            this.btnLamMoi = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cậpNhậtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.btnLamMoi = new System.Windows.Forms.ToolStripButton();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).BeginInit();
@@ -72,7 +71,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.btnThemTreEm);
             this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Location = new System.Drawing.Point(581, 351);
@@ -81,16 +79,6 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Trẻ em";
-            // 
-            // btnThemTreEm
-            // 
-            this.btnThemTreEm.Location = new System.Drawing.Point(304, 59);
-            this.btnThemTreEm.Name = "btnThemTreEm";
-            this.btnThemTreEm.Size = new System.Drawing.Size(83, 23);
-            this.btnThemTreEm.TabIndex = 3;
-            this.btnThemTreEm.Text = "Thêm trẻ em";
-            this.btnThemTreEm.UseVisualStyleBackColor = true;
-            this.btnThemTreEm.Click += new System.EventHandler(this.btnThemTreEm_Click);
             // 
             // comboBox1
             // 
@@ -339,6 +327,14 @@
             this.tsbtnXoa.Text = "Xóa";
             this.tsbtnXoa.Click += new System.EventHandler(this.tsbtnXoa_Click);
             // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(58, 22);
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -373,14 +369,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1011, 24);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // btnLamMoi
-            // 
-            this.btnLamMoi.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(58, 22);
-            this.btnLamMoi.Text = "Làm mới";
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // QuanLyDocGia
             // 
@@ -438,7 +426,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btnThemTreEm;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btn_ThemMoi;
         private System.Windows.Forms.ToolStripButton SBtnChinhSua;

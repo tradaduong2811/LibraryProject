@@ -27,6 +27,7 @@ namespace Library
 
         // Biến toàn cục
         private int DocGiaId;
+        private int NguoiLonId;
 
         /// <summary>
         /// Init Controller
@@ -71,6 +72,16 @@ namespace Library
         {
             // Xác nhận cập nhật thông tin đọc giả khi users nhấn vào "Cập nhật" trên
             // thanh taskbar
+            if (DocGiaId != 0)
+            {
+                DocGiaController.chinhsuaTreEm(DocGiaId, tbHo.Text, tbTenLot.Text, tbTen.Text, tbNgaySinh.Value);
+            }
+                
+            else
+            {
+                //DocGiaController.chinhsuaNguoiLon();
+            }
+                
             MessageBox.Show("Chỉnh sửa thành công!");
             loadDocGia();
                         
@@ -82,6 +93,9 @@ namespace Library
             // Hiển thị màn hình thêm người đọc giả
             // Đồng thời disable 1 số fields không cần thiết
             // Giữ lại giá trị của người lớn quản lý
+            ThemDocGia MH_ThemDocGia = new ThemDocGia();
+            MH_ThemDocGia.adult = false;
+            MH_ThemDocGia.ShowDialog();
         }
 
         private void btn_ThemMoi_Click(object sender, EventArgs e)
@@ -105,7 +119,8 @@ namespace Library
             {
                 // Lấy mã đọc giả
                 DocGiaId = int.Parse(dgvDocGia.SelectedRows[i].Cells[0].Value.ToString());
-
+                // Lấy mã đọc giả người lớn
+                NguoiLonId = int.Parse(dgvDocGia.SelectedRows[i].Cells[8].Value.ToString());
                 // gắn lên textbox
                 tbHo.Text = dgvDocGia.SelectedRows[i].Cells[1].Value.ToString();
                 tbTenLot.Text = dgvDocGia.SelectedRows[i].Cells[2].Value.ToString();
@@ -120,7 +135,7 @@ namespace Library
                 tbDuong.Text = dgvDocGia.SelectedRows[i].Cells[5].Value.ToString();
                 tbQuan.Text = dgvDocGia.SelectedRows[i].Cells[6].Value.ToString();
                 tbDienThoai.Text = dgvDocGia.SelectedRows[i].Cells[7].Value.ToString();
-                ReadOnlyStatus(true);
+                ReadOnlyStatus(true, true);
             }
         }
 
@@ -129,17 +144,22 @@ namespace Library
         /// Thay đổi trạng thái của các button khi có những chức năng tương ứng khác nhau        
         /// </summary>
         /// <param name="stat"> Trạng thái</param>
-        private void ReadOnlyStatus(bool stat)
+        private void ReadOnlyStatus(bool stat, bool adult)
         {
+            tbNgaySinh.Enabled = !stat;
+            btnXacNhan.Enabled = !stat;
             tbHo.ReadOnly = stat;
             tbTenLot.ReadOnly = stat;
             tbTen.ReadOnly = stat;
-            tbSoNha.ReadOnly = stat;
-            tbDuong.ReadOnly = stat;
-            tbQuan.ReadOnly = stat;
-            tbDienThoai.ReadOnly = stat;
-            tbNgaySinh.Enabled = !stat;
-            btnXacNhan.Enabled = !stat;
+            if (adult == true)
+            {
+                tbSoNha.ReadOnly = stat;
+                tbDuong.ReadOnly = stat;
+                tbQuan.ReadOnly = stat;
+                tbDienThoai.ReadOnly = stat;
+            }
+                
+                
         }
         private void SBtnChinhSua_Click(object sender, EventArgs e)
         {
@@ -149,8 +169,15 @@ namespace Library
             if (dialogresult == DialogResult.OK)
             {
                 //int result = VendorsController.removeVendor(VendorId);
-                
-                ReadOnlyStatus(false);
+                if (NguoiLonId != 0)
+                {
+                    ReadOnlyStatus(false, false);
+                }
+                else
+                {
+                    ReadOnlyStatus(false, true);
+                }
+                    
 
             }
         }

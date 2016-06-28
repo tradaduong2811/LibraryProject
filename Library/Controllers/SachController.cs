@@ -43,7 +43,7 @@ namespace Library.Controllers
                 //dg.NgaySinh = DateTime.Parse(dr["NgaySinh"].ToString());
                 listSach.Add(s);
             }
-
+            con.Close();
             return listSach;
         }
 
@@ -59,9 +59,13 @@ namespace Library.Controllers
             cmd.Parameters.Add(new SqlParameter("@param_MaDocGia", DocGiaId));
             cmd.Parameters.Add(new SqlParameter("@param_isbn", isbn));
 
+            var returnParameter = cmd.Parameters.AddWithValue("@return", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
             // Gán parameter cho store procedure
             // chưa biết sử dụng Adapter nào cho phù hợp
             cmd.ExecuteNonQuery();
+
+            con.Close();
             return true;
 
         }

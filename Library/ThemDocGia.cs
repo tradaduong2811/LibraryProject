@@ -27,7 +27,7 @@ namespace Library
         private DocGiaController DocGiaController = new DocGiaController();
 
         // biến đánh dấu "adult" Người lớn = true hay trẻ em = false, mặc định là 1
-        private bool adult = true;
+        public bool adult = true;
 
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
@@ -48,8 +48,16 @@ namespace Library
             }
             else
             {
-                DocGiaController.themTreEm(tbHo.Text, tbTenLot.Text, tbTen.Text, tbNgaySinh.Value, int.Parse(tbMaNguoiLon.Text));
-                MessageBox.Show("Thêm đọc giả trẻ em thành công.");
+                if (DocGiaController.themTreEm(tbHo.Text, tbTenLot.Text, tbTen.Text, tbNgaySinh.Value, int.Parse(tbMaNguoiLon.Text)) == true)
+                {
+                    MessageBox.Show("Thêm đọc giả trẻ em thành công.");
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("thêm thất bại");
+                }
+                
             }
         }
 
