@@ -139,5 +139,11 @@ namespace Library
             btnMuonSach.Enabled = stat;
             btnDangKy.Enabled = !stat;
         }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            // load lại sách
+            loadSach();
+        }
     }
 }

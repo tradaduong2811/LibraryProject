@@ -28,13 +28,19 @@ namespace Library
             btnMuonSach.Enabled = true;
         }
 
+        // Xác nhận mượn sách
         private void btnMuonSach_Click(object sender, EventArgs e)
         {
             if (SachControler.muonSach(int.Parse(tbDocGiaId.Text), QuanLyDauSach.isbnTransition, QuanLyDauSach.SachIdTransition) == true)
             {
                 MessageBox.Show("Độc giả " + tbDocGiaId.Text + " đã mượn sách Thành công.", "Thống báo", MessageBoxButtons.OK);
+                this.Close();
             }
-            // Xác nhận mượn sách
+            else
+            {
+                MessageBox.Show("Xảy ra lỗi.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void loadChiTietSach()
