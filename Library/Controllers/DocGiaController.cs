@@ -25,18 +25,19 @@ namespace Library.Controllers
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataReader dr_DocGia = cmd.ExecuteReader();
 
-            while(dr_DocGia.Read())
+            while (dr_DocGia.Read())
             {
                 DocGia dg = new DocGia();
-                dg.DocGiaId =   int.Parse(dr_DocGia["ma_docgia"].ToString());
-                dg.Ho =         dr_DocGia["ho"].ToString();
-                dg.TenLot =     dr_DocGia["tenlot"].ToString();
-                dg.Ten =        dr_DocGia["ten"].ToString();
-                dg.Duong =      dr_DocGia["duong"].ToString();
-                dg.SoNha =      dr_DocGia["sonha"].ToString();
-                dg.Quan =       dr_DocGia["quan"].ToString();
-                dg.DienThoai =  dr_DocGia["dienthoai"].ToString();
-                //dg.MaNguoiLon = int.Parse(dr_DocGia["manguoilon"].ToString());
+                dg.DocGiaId = int.Parse(dr_DocGia["ma_docgia"].ToString());
+                dg.Ho = dr_DocGia["ho"].ToString();
+                dg.TenLot = dr_DocGia["tenlot"].ToString();
+                dg.Ten = dr_DocGia["ten"].ToString();
+                dg.Duong = dr_DocGia["duong"].ToString();
+                dg.SoNha = dr_DocGia["sonha"].ToString();
+                dg.Quan = dr_DocGia["quan"].ToString();
+                dg.DienThoai = dr_DocGia["dienthoai"].ToString();
+                if (dr_DocGia["manguoilon"].ToString() != "")
+                    dg.MaNguoiLon = int.Parse(dr_DocGia["manguoilon"].ToString());
                 if (dr_DocGia["NgaySinh"].ToString() != "")
                 {
                     dg.NgaySinh = DateTime.Parse(dr_DocGia["NgaySinh"].ToString());
@@ -55,7 +56,7 @@ namespace Library.Controllers
 
 
 
-        public bool themNguoiLon(string Ho, string TenLot, string Ten, DateTime NgaySinh, string SoNha, 
+        public bool themNguoiLon(string Ho, string TenLot, string Ten, DateTime NgaySinh, string SoNha,
                                     string Duong, string Quan, string DienThoai)
         {
             SqlConnection con = new SqlConnection();
@@ -85,10 +86,10 @@ namespace Library.Controllers
 
         public void themTreEm()
         {
-            
+
         }
 
-        public void themTreEm(string Ho, string TenLot, string Ten, DateTime NgaySinh, int NguoiLonId)
+        public bool themTreEm(string Ho, string TenLot, string Ten, DateTime NgaySinh, int NguoiLonId)
         {
             SqlConnection con = new SqlConnection();
             con = Provider.ConnectionData();
@@ -102,7 +103,14 @@ namespace Library.Controllers
             cmd.Parameters.AddWithValue("@param_ngaysinh", NgaySinh);
             cmd.Parameters.AddWithValue("@param_MaNguoiLon", NguoiLonId);
             //cmd.Parameters.Add("@param_han_sd", DateTime.Now.AddYears(1));
-            cmd.ExecuteNonQuery();  
+            var returnParameter = cmd.Parameters.AddWithValue("@return", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+
+
+            cmd.ExecuteNonQuery();
+            if (returnParameter.Value.ToString() == "1")
+                return true;
+            return false;
         }
 
         public bool xoaDocGia(int DocGiaId)
@@ -125,6 +133,7 @@ namespace Library.Controllers
                 return true;
             return false;
         }
+<<<<<<< .mine
 
         public bool kiemtraDocGia(int isbn)
         {
@@ -132,5 +141,52 @@ namespace Library.Controllers
 
             return true;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+
+        public void chinhsuaTreEm(int id, string Ho, string TenLot, string Ten, DateTime NgaySinh)
+        {
+            SqlConnection con = new SqlConnection();
+            con = Provider.ConnectionData();
+            SqlCommand cmd = new SqlCommand("sp_ChinhsuaTreEm", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            // Khai báo Parameters
+            cmd.Parameters.AddWithValue("@param_id", id);
+            cmd.Parameters.AddWithValue("@param_ho", Ho);
+            cmd.Parameters.AddWithValue("@param_tenlot", TenLot);
+            cmd.Parameters.AddWithValue("@param_ten", Ten);
+            cmd.Parameters.AddWithValue("@param_ngaysinh", NgaySinh);
+            //cmd.Parameters.Add("@param_han_sd", DateTime.Now.AddYears(1));
+            var returnParameter = cmd.Parameters.AddWithValue("@return", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void chinhsuaNguoiLon(int id, string Ho, string TenLot, string Ten, DateTime NgaySinh,
+                                        string So, string Duong, string Quan)
+        {
+
+        }
+>>>>>>> .theirs
     }
 }

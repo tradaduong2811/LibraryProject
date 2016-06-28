@@ -16,7 +16,11 @@ namespace Library
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< .mine
             Application.Run(new DangKySach());
+=======
+            Application.Run(new QuanLyDauSach());
+>>>>>>> .theirs
         }
     }
 }
