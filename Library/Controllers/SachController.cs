@@ -91,10 +91,66 @@ namespace Library.Controllers
             return false;
        }
 
-        public Sach traSach()
+        public bool traSach(int isbn, int madocgia, int masach)
         {
-            Sach sach = new Sach();
-            return sach;
+            SqlConnection con = new SqlConnection();
+            con = Provider.ConnectionData();
+
+            SqlCommand cmd = new SqlCommand("sp_TraSach", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlParameter sqlParam = new SqlParameter();
+            cmd.Parameters.Add(new SqlParameter("@param_isbn", isbn));
+            cmd.Parameters.Add(new SqlParameter("@param_MaDocGia", madocgia));
+            cmd.Parameters.Add(new SqlParameter("@param_MaSach", masach));
+
+            var returnParameter = cmd.Parameters.AddWithValue("@return", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+            cmd.ExecuteNonQuery();
+
+            if (returnParameter.Value.ToString() == "1")
+                return true;
+            return false;
+        }
+
+        public bool kiemtraISBN(int isbn)
+        {
+            SqlConnection con = new SqlConnection();
+            con = Provider.ConnectionData();
+
+            SqlCommand cmd = new SqlCommand("sp_KiemTraISBN", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlParameter sqlParam = new SqlParameter();
+            cmd.Parameters.Add(new SqlParameter("@param_isbn", isbn));
+
+            var returnParameter = cmd.Parameters.AddWithValue("@return", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+            cmd.ExecuteNonQuery();
+
+            if (returnParameter.Value.ToString() == "1")
+                return true;
+            return false;
+        }
+
+
+
+        public bool kiemtraMaCuonSach(int macuonsach, int isbn)
+        {
+            SqlConnection con = new SqlConnection();
+            con = Provider.ConnectionData();
+
+            SqlCommand cmd = new SqlCommand("sp_KiemTraMaCuonSach", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlParameter sqlParam = new SqlParameter();
+            cmd.Parameters.Add(new SqlParameter("@param_MaCuonSach", macuonsach));
+            cmd.Parameters.Add(new SqlParameter("@param_isbn", isbn));
+
+            var returnParameter = cmd.Parameters.AddWithValue("@return", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+            cmd.ExecuteNonQuery();
+
+            if (returnParameter.Value.ToString() == "1")
+                return true;
+            return false;
         }
 
         public bool timkiemSach(int ISBN)
