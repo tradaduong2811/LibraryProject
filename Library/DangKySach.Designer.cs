@@ -74,6 +74,7 @@
             this.txtMaDocGia.Name = "txtMaDocGia";
             this.txtMaDocGia.Size = new System.Drawing.Size(121, 22);
             this.txtMaDocGia.TabIndex = 19;
+            this.txtMaDocGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaDocGia_KeyPress);
             // 
             // label1
             // 

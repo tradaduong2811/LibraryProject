@@ -70,10 +70,26 @@ namespace Library.Controllers
 
         }
 
-        public bool dangkyMuonSach()
+        public bool dangkyMuonSach(int isbn, int madocgia, DateTime thoigian)
         {
-            return true;
-        }
+            SqlConnection con = new SqlConnection();
+            con = Provider.ConnectionData();
+
+            SqlCommand cmd = new SqlCommand("sp_DangKyMuonSach", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlParameter sqlParam = new SqlParameter();
+            cmd.Parameters.Add(new SqlParameter("@param_isbn", isbn));
+            cmd.Parameters.Add(new SqlParameter("@param_MaDocGia", madocgia));
+            cmd.Parameters.Add(new SqlParameter("@param_NgayGio", thoigian.Date.ToShortDateString()));
+
+            var returnParameter = cmd.Parameters.AddWithValue("@return", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+            cmd.ExecuteNonQuery();
+
+            if (returnParameter.Value.ToString() == "1")
+                return true;
+            return false;
+       }
 
         public Sach traSach()
         {

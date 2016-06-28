@@ -133,34 +133,27 @@ namespace Library.Controllers
                 return true;
             return false;
         }
-<<<<<<< .mine
 
-        public bool kiemtraDocGia(int isbn)
+        public bool kiemtraDocGia(int id)
         {
             //Goi store kiem tra doc gia
+            SqlConnection conn = new SqlConnection();
+            conn = Provider.ConnectionData();
 
-            return true;
+            SqlCommand cmd = new SqlCommand("sp_KiemTraDocGia", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@param_MaDocGia", id);
+
+            var returnParameter = cmd.Parameters.AddWithValue("@return", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+
+            cmd.ExecuteNonQuery();
+            if (returnParameter.Value.ToString() == "1")
+                return true;
+            return false;
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 
         public void chinhsuaTreEm(int id, string Ho, string TenLot, string Ten, DateTime NgaySinh)
         {
@@ -187,6 +180,5 @@ namespace Library.Controllers
         {
 
         }
->>>>>>> .theirs
     }
 }

@@ -88,7 +88,14 @@ namespace Library
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             DangKySach MH_DangKySach = new DangKySach();
+
+            for (int i = 0; i < dgvSach.SelectedRows.Count; i++)
+            {
+                isbnTransition = int.Parse(dgvSach.SelectedRows[i].Cells[0].Value.ToString());
+            }
+
             Sach sach = new Sach();
+            sach.Isbn = isbnTransition;
             sach.TenTuaSach = tbTuaSach.Text;
           //  sach.TenTuaSach = TuaSachTransition;
             sach.TacGia = tbTacGia.Text;
