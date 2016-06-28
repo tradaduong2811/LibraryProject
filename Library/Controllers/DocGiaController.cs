@@ -55,7 +55,7 @@ namespace Library.Controllers
 
 
 
-        public void themNguoiLon(string Ho, string TenLot, string Ten, DateTime NgaySinh, string SoNha, 
+        public bool themNguoiLon(string Ho, string TenLot, string Ten, DateTime NgaySinh, string SoNha, 
                                     string Duong, string Quan, string DienThoai)
         {
             SqlConnection con = new SqlConnection();
@@ -64,17 +64,23 @@ namespace Library.Controllers
             cmd.CommandType = CommandType.StoredProcedure;
 
             // Khai báo Parameters
-            cmd.Parameters.Add("@param_ho", Ho);
-            cmd.Parameters.Add("@param_tenlot", TenLot);
-            cmd.Parameters.Add("@param_ten", Ten);
-            cmd.Parameters.Add("@param_sonha", SoNha);
-            cmd.Parameters.Add("@param_duong", Duong);
-            cmd.Parameters.Add("@param_quan", Quan);
-            cmd.Parameters.Add("@param_ngaysinh", NgaySinh);
-            cmd.Parameters.Add("@param_han_sd", DateTime.Now.AddYears(1));
-            cmd.Parameters.Add("@param_dienthoai", DienThoai);
+            cmd.Parameters.AddWithValue("@param_ho", Ho);
+            cmd.Parameters.AddWithValue("@param_tenlot", TenLot);
+            cmd.Parameters.AddWithValue("@param_ten", Ten);
+            cmd.Parameters.AddWithValue("@param_sonha", SoNha);
+            cmd.Parameters.AddWithValue("@param_duong", Duong);
+            cmd.Parameters.AddWithValue("@param_quan", Quan);
+            cmd.Parameters.AddWithValue("@param_ngaysinh", NgaySinh);
+            cmd.Parameters.AddWithValue("@param_han_sd", DateTime.Now.AddYears(1));
+            cmd.Parameters.AddWithValue("@param_dienthoai", DienThoai);
 
-            cmd.ExecuteNonQuery();  
+            var returnParameter = cmd.Parameters.AddWithValue("@return", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+
+            cmd.ExecuteNonQuery();
+            if (returnParameter.Value.ToString() == "1")
+                return true;
+            return false;
         }
 
         public void themTreEm()
@@ -90,13 +96,34 @@ namespace Library.Controllers
             cmd.CommandType = CommandType.StoredProcedure;
 
             // Khai báo Parameters
-            cmd.Parameters.Add("@param_ho", Ho);
-            cmd.Parameters.Add("@param_tenlot", TenLot);
-            cmd.Parameters.Add("@param_ten", Ten);
-            cmd.Parameters.Add("@param_ngaysinh", NgaySinh);
-            cmd.Parameters.Add("@param_MaNguoiLon", NguoiLonId);
+            cmd.Parameters.AddWithValue("@param_ho", Ho);
+            cmd.Parameters.AddWithValue("@param_tenlot", TenLot);
+            cmd.Parameters.AddWithValue("@param_ten", Ten);
+            cmd.Parameters.AddWithValue("@param_ngaysinh", NgaySinh);
+            cmd.Parameters.AddWithValue("@param_MaNguoiLon", NguoiLonId);
             //cmd.Parameters.Add("@param_han_sd", DateTime.Now.AddYears(1));
             cmd.ExecuteNonQuery();  
+        }
+
+        public bool xoaDocGia(int DocGiaId)
+        {
+            SqlConnection con = new SqlConnection();
+            con = Provider.ConnectionData();
+
+            SqlCommand cmd = new SqlCommand("sp_XoaDocGia", con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@param_MaDocGia", DocGiaId);
+
+            var returnParameter = cmd.Parameters.AddWithValue("@return", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+
+
+            cmd.ExecuteNonQuery();
+            if (returnParameter.Value.ToString() == "1")
+                return true;
+            return false;
         }
     }
 }

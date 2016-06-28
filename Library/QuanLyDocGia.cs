@@ -25,6 +25,8 @@ namespace Library
             
         }
 
+        // Biến toàn cục
+        private int DocGiaId;
 
         /// <summary>
         /// Init Controller
@@ -32,7 +34,7 @@ namespace Library
 
         DocGiaController DocGiaController = new DocGiaController();
 
-        private void loadDocGia()
+        public void loadDocGia()
         {
             if (DocGiaController.loadDocGia() == null)
             {
@@ -101,6 +103,10 @@ namespace Library
         {
             for (int i = 0; i < dgvDocGia.SelectedRows.Count; i++)
             {
+                // Lấy mã đọc giả
+                DocGiaId = int.Parse(dgvDocGia.SelectedRows[i].Cells[0].Value.ToString());
+
+                // gắn lên textbox
                 tbHo.Text = dgvDocGia.SelectedRows[i].Cells[1].Value.ToString();
                 tbTenLot.Text = dgvDocGia.SelectedRows[i].Cells[2].Value.ToString();
                 if (dgvDocGia.SelectedRows[i].Cells[9].Value != null)
@@ -119,6 +125,10 @@ namespace Library
         }
 
 
+        /// <summary>
+        /// Thay đổi trạng thái của các button khi có những chức năng tương ứng khác nhau        
+        /// </summary>
+        /// <param name="stat"> Trạng thái</param>
         private void ReadOnlyStatus(bool stat)
         {
             tbHo.ReadOnly = stat;
@@ -147,21 +157,20 @@ namespace Library
 
         private void tsbtnXoa_Click(object sender, EventArgs e)
         {
-            string DocGiaId = "123";
-            DialogResult dialogresult = MessageBox.Show("Bạn có muốn xóa đọc giả " + DocGiaId + " không?",
+            DialogResult dialogresult = MessageBox.Show("Bạn muốn xóa đọc giả MS " + DocGiaId.ToString() + " ?",
                                                "Xóa?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning,
                                                MessageBoxDefaultButton.Button2);
             if (dialogresult == DialogResult.OK)
             {
-                int result = 1;
-                if (result == 0)
+                bool result = DocGiaController.xoaDocGia(DocGiaId);
+                if (result == false)
                 {
                     MessageBox.Show("Đọc giả Mã số " + DocGiaId + " không thể xóa.",
                     "Cảnh cáo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Stop);
                 }
-                if (result == 1)
+                if (result == true)
                 {
                     MessageBox.Show("Đã xóa đọc giả Mã số " + DocGiaId + ".", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.None);
                     // cập nhật lại danh sách nhà cung cấp
@@ -170,6 +179,11 @@ namespace Library
                     dgvDocGia.Refresh();
                 }
             }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            loadDocGia();
         }
     }
 }

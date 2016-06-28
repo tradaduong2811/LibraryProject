@@ -35,9 +35,16 @@ namespace Library
             // Automatical gán Mã cho đọc giả (nhờ Database)
             if (adult == true)
             {
-                DocGiaController.themNguoiLon(tbHo.Text, tbTenLot.Text, tbTen.Text, tbNgaySinh.Value,
-                                                tbSoNha.Text, tbDuong.Text, tbQuan.Text, tbDienThoai.Text);
-                MessageBox.Show("Thêm đọc giả người lớn thành công.");
+                if (DocGiaController.themNguoiLon(tbHo.Text, tbTenLot.Text, tbTen.Text, tbNgaySinh.Value,
+                                                tbSoNha.Text, tbDuong.Text, tbQuan.Text, tbDienThoai.Text) == true)
+                {
+                    MessageBox.Show("Thêm đọc giả người lớn thành công.");
+                    Close();
+                }
+                    
+
+                else
+                    MessageBox.Show("thêm thất bại");
             }
             else
             {
@@ -71,6 +78,22 @@ namespace Library
         private void btnNguoiLon_Click(object sender, EventArgs e)
         {
             changeStatus(false);
+        }
+
+        private void tbNgaySinh_ValueChanged(object sender, EventArgs e)
+        {
+
+            // Đọc giả người lớn nhưng nhập dữ liệu nhầm tuổi
+            if ((DateTime.Now.Year - tbNgaySinh.Value.Year) < 18 && adult == true)
+            {
+                MessageBox.Show("Đọc giả chưa đủ tuổi");
+                btnThemMoi.Enabled = false;
+            }
+            if ((DateTime.Now.Year - tbNgaySinh.Value.Year) >= 18 && adult == true)
+            {
+                btnThemMoi.Enabled = true;
+            }
+                
         }
     }
 }

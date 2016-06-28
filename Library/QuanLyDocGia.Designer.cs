@@ -61,6 +61,7 @@
             this.cậpNhậtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.btnLamMoi = new System.Windows.Forms.ToolStripButton();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).BeginInit();
@@ -306,6 +307,7 @@
             this.btn_ThemMoi,
             this.SBtnChinhSua,
             this.tsbtnXoa,
+            this.btnLamMoi,
             this.toolStripSeparator1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
@@ -371,6 +373,14 @@
             this.menuStrip1.Size = new System.Drawing.Size(1011, 24);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(58, 22);
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // QuanLyDocGia
             // 
@@ -438,5 +448,6 @@
         private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripButton tsbtnXoa;
+        private System.Windows.Forms.ToolStripButton btnLamMoi;
     }
 }

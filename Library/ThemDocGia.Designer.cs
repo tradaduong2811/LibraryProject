@@ -105,6 +105,7 @@
             this.tbNgaySinh.Name = "tbNgaySinh";
             this.tbNgaySinh.Size = new System.Drawing.Size(236, 20);
             this.tbNgaySinh.TabIndex = 6;
+            this.tbNgaySinh.ValueChanged += new System.EventHandler(this.tbNgaySinh_ValueChanged);
             // 
             // label4
             // 
