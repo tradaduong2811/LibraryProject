@@ -16,6 +16,8 @@ namespace Library.Models
         private int _SoLuong;
         private string _TacGia;
         private string _TomTat;
+        private string _Bia;
+
 
     
 
@@ -69,7 +71,11 @@ namespace Library.Models
             set { _NgonNgu = value; }
         }
 
-  
+        public string Bia
+        {
+            get { return _Bia; }
+            set { _Bia = value; }
+        }
 
     }
 }

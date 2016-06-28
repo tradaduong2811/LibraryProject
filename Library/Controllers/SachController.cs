@@ -65,5 +65,23 @@ namespace Library.Controllers
             return true;
 
         }
+
+        public bool dangkyMuonSach()
+        {
+            return true;
+        }
+
+        public Sach traSach()
+        {
+            Sach sach = new Sach();
+            return sach;
+        }
+
+        public bool timkiemSach(int ISBN)
+        {
+            return true;
+        }
+
+
     }
 }

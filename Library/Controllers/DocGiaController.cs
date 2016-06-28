@@ -125,5 +125,12 @@ namespace Library.Controllers
                 return true;
             return false;
         }
+
+        public bool kiemtraDocGia(int isbn)
+        {
+            //Goi store kiem tra doc gia
+
+            return true;
+        }
     }
 }

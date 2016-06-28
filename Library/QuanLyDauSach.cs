@@ -1,4 +1,5 @@
 ﻿using Library.Controllers;
+using Library.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace Library
             InitializeComponent();
             loadSach();
         }
-
+        public delegate void delPassData(Sach sach);
        ///Biến cho việc luân chuyển giữa 2 giao diện
        ///
         public static int isbnTransition;
@@ -87,8 +88,14 @@ namespace Library
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             DangKySach MH_DangKySach = new DangKySach();
-
-           
+            Sach sach = new Sach();
+            sach.TenTuaSach = tbTuaSach.Text;
+          //  sach.TenTuaSach = TuaSachTransition;
+            sach.TacGia = tbTacGia.Text;
+            sach.NgonNgu = tbNgonNgu.Text;
+            sach.Bia = tbBiaSach.Text;
+            delPassData del = new delPassData(MH_DangKySach.fillData);
+            del(sach);
 
             MH_DangKySach.ShowDialog();
         }
