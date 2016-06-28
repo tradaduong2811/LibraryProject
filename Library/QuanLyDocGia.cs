@@ -28,7 +28,7 @@ namespace Library
         // Biến toàn cục
         private int DocGiaId;
         private int NguoiLonId;
-
+        
         /// <summary>
         /// Init Controller
         /// </summary>
@@ -72,18 +72,22 @@ namespace Library
         {
             // Xác nhận cập nhật thông tin đọc giả khi users nhấn vào "Cập nhật" trên
             // thanh taskbar
-            if (DocGiaId != 0)
+            if (NguoiLonId != 0)
             {
-                DocGiaController.chinhsuaTreEm(DocGiaId, tbHo.Text, tbTenLot.Text, tbTen.Text, tbNgaySinh.Value);
-            }
                 
+                DocGiaController.chinhsuaTreEm(DocGiaId, tbHo.Text, tbTenLot.Text, tbTen.Text, tbNgaySinh.Value);
+                MessageBox.Show("Chỉnh sửa thành công!");
+                loadDocGia();
+            }
             else
             {
-                //DocGiaController.chinhsuaNguoiLon();
+                DocGiaController.chinhsuaNguoiLon(DocGiaId, tbHo.Text, tbTenLot.Text, tbTen.Text, tbNgaySinh.Value,
+                                                    tbSoNha.Text, tbDuong.Text, tbQuan.Text, tbDienThoai.Text);
+                MessageBox.Show("Chỉnh sửa thành công!");
+                loadDocGia();
             }
                 
-            MessageBox.Show("Chỉnh sửa thành công!");
-            loadDocGia();
+            
                         
 
         }
