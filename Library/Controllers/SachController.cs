@@ -153,9 +153,36 @@ namespace Library.Controllers
             return false;
         }
 
-        public bool timkiemSach(int ISBN)
+        public List<Sach> timkiemSach(string tensach)
         {
-            return true;
+            List<Sach> list = new List<Sach>();
+            //DataTable dt_DocGia = new DataTable();
+            SqlConnection con = new SqlConnection();
+            con = Provider.ConnectionData();
+            SqlCommand cmd = new SqlCommand("sp_TimSach", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter sqlParam = new SqlParameter();
+            cmd.Parameters.Add(new SqlParameter("@param_tensach", tensach));
+
+
+            SqlDataReader dr_Sach = cmd.ExecuteReader();
+
+            while (dr_Sach.Read())
+            {
+                Sach sach = new Sach  ();
+                sach.Isbn = int.Parse(dr_Sach["isbn"].ToString());
+                sach.TuaSachId = int.Parse(dr_Sach["ma_tuasach"].ToString());
+                sach.NgonNgu = dr_Sach["ngonngu"].ToString();
+                sach.TrangThai = dr_Sach["trangthai"].ToString();
+                sach.TacGia = dr_Sach["tacgia"].ToString();
+                sach.TomTat = dr_Sach["tomtat"].ToString();
+                sach.TenTuaSach = dr_Sach["TuaSach"].ToString();
+                sach.SoLuong = int.Parse(dr_Sach["soluong"].ToString());
+                list.Add(sach);
+            }
+            con.Close();
+            return list;
         }
 
 

@@ -120,7 +120,6 @@ namespace Library
             Sach sach = new Sach();
             sach.Isbn = isbnTransition;
             sach.TenTuaSach = tbTuaSach.Text;
-          //  sach.TenTuaSach = TuaSachTransition;
             sach.TacGia = tbTacGia.Text;
             sach.NgonNgu = tbNgonNgu.Text;
             sach.Bia = tbBiaSach.Text;
@@ -167,6 +166,31 @@ namespace Library
         {
             // load lại sách
             loadSach();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            dgvSach.DataSource = null;
+            dgvSach.Rows.Clear();
+            try
+            {
+                dgvSach.DataSource = SachController.timkiemSach(txtTimKiem.Text);
+                dgvSach.Columns[0].HeaderText = "Isbn";
+                dgvSach.Columns[0].Width = 50;
+                dgvSach.Columns[1].HeaderText = "Mã ts";
+                dgvSach.Columns[1].Width = 70;
+                txtTimKiem.Text = "";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Có lỗi xảy ra");
+            }
+
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            btnTimKiem.Enabled = !string.IsNullOrWhiteSpace(txtTimKiem.Text);
         }
     }
 }
