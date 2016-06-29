@@ -18,6 +18,7 @@ namespace Library
         {
             InitializeComponent();
             loadSach();
+            loadDocGiaMuonSach();
         }
         public delegate void delPassData(Sach sach);
        ///Biến cho việc luân chuyển giữa 2 giao diện
@@ -34,6 +35,7 @@ namespace Library
         /// Controller
         /// </summary>
         private SachController SachController = new SachController();
+        private MuonController MuonController = new MuonController();
 
         private void loadSach()
         {
@@ -50,6 +52,27 @@ namespace Library
                 dgvSach.Columns[1].Width = 70;
             }
         }
+
+        private void loadDocGiaMuonSach()
+        {
+            if (MuonController.loadDocGiaMuonSach() == null)
+            {
+                MessageBox.Show("Xảy ra lỗi lấy dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                dgvMuon.DataSource = MuonController.loadDocGiaMuonSach();
+                dgvMuon.Columns[0].HeaderText = "Isbn";
+                dgvMuon.Columns[0].Width = 50;
+                dgvMuon.Columns[1].HeaderText = "Mã ts";
+                dgvMuon.Columns[1].Width = 70;
+                dgvMuon.Columns[2].HeaderText = "Tựa sách";
+                dgvMuon.Columns[2].Width = 100;
+            }
+        }
+
+
+
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {

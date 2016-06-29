@@ -77,14 +77,19 @@ namespace Library
                 
                 DocGiaController.chinhsuaTreEm(DocGiaId, tbHo.Text, tbTenLot.Text, tbTen.Text, tbNgaySinh.Value);
                 MessageBox.Show("Chỉnh sửa thành công!");
-                loadDocGia();
+
+                // demo repeatable read
+                //loadDocGia();
             }
             else
             {
                 DocGiaController.chinhsuaNguoiLon(DocGiaId, tbHo.Text, tbTenLot.Text, tbTen.Text, tbNgaySinh.Value,
                                                     tbSoNha.Text, tbDuong.Text, tbQuan.Text, tbDienThoai.Text);
                 MessageBox.Show("Chỉnh sửa thành công!");
-                loadDocGia();
+
+
+                // demo repeatable read
+                //loadDocGia();
             }
                 
             

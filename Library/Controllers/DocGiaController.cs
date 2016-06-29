@@ -21,7 +21,7 @@ namespace Library.Controllers
             //DataTable dt_DocGia = new DataTable();
             SqlConnection con = new SqlConnection();
             con = Provider.ConnectionData();
-            SqlCommand cmd = new SqlCommand("sp_DanhSachDocGia", con);
+            SqlCommand cmd = new SqlCommand("sp_DanhSachDocGia_repeatableread_solving", con);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataReader dr_DocGia = cmd.ExecuteReader();
 

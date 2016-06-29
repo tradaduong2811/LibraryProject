@@ -36,7 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbTuaSach = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbTimKiem = new System.Windows.Forms.TextBox();
             this.dgvSach = new System.Windows.Forms.DataGridView();
             this.tbSoSachCon = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.tbBiaSach = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnDangKy = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMuon = new System.Windows.Forms.DataGridView();
             this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cậpNhậtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,16 +54,18 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnLamMoi = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSach)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMuon)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(527, 52);
+            this.button2.Location = new System.Drawing.Point(527, 63);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(108, 27);
             this.button2.TabIndex = 21;
@@ -73,7 +75,7 @@
             // btnMuonSach
             // 
             this.btnMuonSach.Enabled = false;
-            this.btnMuonSach.Location = new System.Drawing.Point(822, 437);
+            this.btnMuonSach.Location = new System.Drawing.Point(807, 318);
             this.btnMuonSach.Name = "btnMuonSach";
             this.btnMuonSach.Size = new System.Drawing.Size(75, 32);
             this.btnMuonSach.TabIndex = 19;
@@ -134,22 +136,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tựa sách";
             // 
-            // textBox1
+            // tbTimKiem
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 52);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(492, 27);
-            this.textBox1.TabIndex = 20;
+            this.tbTimKiem.Location = new System.Drawing.Point(12, 63);
+            this.tbTimKiem.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
+            this.tbTimKiem.Multiline = true;
+            this.tbTimKiem.Name = "tbTimKiem";
+            this.tbTimKiem.Size = new System.Drawing.Size(492, 27);
+            this.tbTimKiem.TabIndex = 20;
+            this.tbTimKiem.Tag = "";
             // 
             // dgvSach
             // 
             this.dgvSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSach.Location = new System.Drawing.Point(12, 87);
+            this.dgvSach.Location = new System.Drawing.Point(12, 96);
             this.dgvSach.Name = "dgvSach";
             this.dgvSach.ReadOnly = true;
             this.dgvSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSach.Size = new System.Drawing.Size(623, 373);
+            this.dgvSach.Size = new System.Drawing.Size(623, 214);
             this.dgvSach.TabIndex = 17;
             this.dgvSach.Click += new System.EventHandler(this.dgvSach_Click);
             // 
@@ -157,7 +161,7 @@
             // 
             this.tbSoSachCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSoSachCon.ForeColor = System.Drawing.Color.Red;
-            this.tbSoSachCon.Location = new System.Drawing.Point(739, 437);
+            this.tbSoSachCon.Location = new System.Drawing.Point(724, 318);
             this.tbSoSachCon.Multiline = true;
             this.tbSoSachCon.Name = "tbSoSachCon";
             this.tbSoSachCon.ReadOnly = true;
@@ -167,7 +171,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(662, 447);
+            this.label5.Location = new System.Drawing.Point(647, 328);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 2;
@@ -203,7 +207,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.tbTuaSach);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(656, 173);
+            this.groupBox1.Location = new System.Drawing.Point(641, 54);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(322, 247);
             this.groupBox1.TabIndex = 14;
@@ -229,7 +233,7 @@
             // 
             // btnDangKy
             // 
-            this.btnDangKy.Location = new System.Drawing.Point(903, 437);
+            this.btnDangKy.Location = new System.Drawing.Point(888, 318);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(75, 32);
             this.btnDangKy.TabIndex = 22;
@@ -237,13 +241,15 @@
             this.btnDangKy.UseVisualStyleBackColor = true;
             this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
-            // dataGridView1
+            // dgvMuon
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(656, 52);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(322, 115);
-            this.dataGridView1.TabIndex = 23;
+            this.dgvMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMuon.Location = new System.Drawing.Point(12, 349);
+            this.dgvMuon.Name = "dgvMuon";
+            this.dgvMuon.ReadOnly = true;
+            this.dgvMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMuon.Size = new System.Drawing.Size(623, 155);
+            this.dgvMuon.TabIndex = 23;
             // 
             // thêmToolStripMenuItem
             // 
@@ -300,19 +306,41 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(259, 328);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(134, 18);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Sách đang mượn";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(301, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 18);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Sách";
+            // 
             // QuanLyDauSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 487);
+            this.ClientSize = new System.Drawing.Size(1013, 527);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvMuon);
             this.Controls.Add(this.tbSoSachCon);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnMuonSach);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbTimKiem);
             this.Controls.Add(this.dgvSach);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -322,7 +350,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSach)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMuon)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -342,7 +370,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbTuaSach;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbTimKiem;
         private System.Windows.Forms.DataGridView dgvSach;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
@@ -352,7 +380,7 @@
         private System.Windows.Forms.TextBox tbBiaSach;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnDangKy;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMuon;
         private System.Windows.Forms.ToolStripMenuItem thêmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cậpNhậtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
@@ -360,5 +388,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnLamMoi;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

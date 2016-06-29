@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\DocGiaController.cs" />
+    <Compile Include="Controllers\MuonController.cs" />
     <Compile Include="Controllers\SachController.cs" />
     <Compile Include="DangKySach.cs">
       <SubType>Form</SubType>
@@ -60,6 +61,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\DocGia.cs" />
+    <Compile Include="Models\Muon.cs" />
     <Compile Include="Models\Sach.cs" />
     <Compile Include="MuonSach.cs">
       <SubType>Form</SubType>
