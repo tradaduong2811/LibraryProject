@@ -49,7 +49,7 @@
             this.tbHo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDocGia = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvDangKy = new System.Windows.Forms.DataGridView();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_ThemMoi = new System.Windows.Forms.ToolStripButton();
@@ -61,10 +61,11 @@
             this.cậpNhậtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDangKy)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -269,13 +270,13 @@
             this.dgvDocGia.TabIndex = 5;
             this.dgvDocGia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDocGia_CellClick);
             // 
-            // dataGridView2
+            // dgvDangKy
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 261);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(563, 186);
-            this.dataGridView2.TabIndex = 9;
+            this.dgvDangKy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDangKy.Location = new System.Drawing.Point(12, 314);
+            this.dgvDangKy.Name = "dgvDangKy";
+            this.dgvDangKy.Size = new System.Drawing.Size(563, 186);
+            this.dgvDangKy.TabIndex = 9;
             // 
             // btnXacNhan
             // 
@@ -370,14 +371,25 @@
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(190, 293);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(176, 18);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "Đọc giả đăng ký mượn";
+            // 
             // QuanLyDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 496);
+            this.ClientSize = new System.Drawing.Size(1011, 512);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnXacNhan);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvDangKy);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvDocGia);
@@ -391,7 +403,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDangKy)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -406,7 +418,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvDocGia;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvDangKy;
         private System.Windows.Forms.Button btnXacNhan;
         private System.Windows.Forms.TextBox tbDienThoai;
         private System.Windows.Forms.Label label8;
@@ -436,5 +448,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripButton tsbtnXoa;
         private System.Windows.Forms.ToolStripButton btnLamMoi;
+        private System.Windows.Forms.Label label10;
     }
 }
