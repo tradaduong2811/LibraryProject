@@ -20,7 +20,7 @@ namespace Library
 
         // Controller
         private SachController SachControler = new SachController();
-
+        private MuonController MuonController = new MuonController();
 
         private void btnKiemTra_Click(object sender, EventArgs e)
         {
@@ -31,9 +31,9 @@ namespace Library
         // Xác nhận mượn sách
         private void btnMuonSach_Click(object sender, EventArgs e)
         {
-            if (SachControler.muonSach(int.Parse(tbDocGiaId.Text), QuanLyDauSach.isbnTransition, QuanLyDauSach.SachIdTransition) == true)
+            if (MuonController.muonSach(int.Parse(tbDocGiaId.Text), QuanLyDauSach.isbnTransition, QuanLyDauSach.SachIdTransition) == true)
             {
-                MessageBox.Show("Độc giả " + tbDocGiaId.Text + " đã mượn sách Thành công.", "Thống báo", MessageBoxButtons.OK);
+                MessageBox.Show("Độc giả " + tbDocGiaId.Text + " đã mượn sách Thành công.", "Thông báo", MessageBoxButtons.OK);
                 this.Close();
             }
             else

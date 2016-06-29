@@ -48,27 +48,7 @@ namespace Library.Controllers
         }
 
 
-        public bool muonSach(int DocGiaId, int isbn, int SachId)
-        {
-            SqlConnection con = new SqlConnection();
-            con = Provider.ConnectionData();
 
-            SqlCommand cmd = new SqlCommand("sp_MuonSach", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlParameter sqlParam = new SqlParameter();
-            cmd.Parameters.Add(new SqlParameter("@param_MaDocGia", DocGiaId));
-            cmd.Parameters.Add(new SqlParameter("@param_isbn", isbn));
-
-            var returnParameter = cmd.Parameters.AddWithValue("@return", SqlDbType.Int);
-            returnParameter.Direction = ParameterDirection.ReturnValue;
-            // Gán parameter cho store procedure
-            // chưa biết sử dụng Adapter nào cho phù hợp
-            cmd.ExecuteNonQuery();
-
-            con.Close();
-            return true;
-
-        }
 
         public bool dangkyMuonSach(int isbn, int madocgia, DateTime thoigian)
         {

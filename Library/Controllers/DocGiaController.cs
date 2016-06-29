@@ -21,7 +21,7 @@ namespace Library.Controllers
             //DataTable dt_DocGia = new DataTable();
             SqlConnection con = new SqlConnection();
             con = Provider.ConnectionData();
-            SqlCommand cmd = new SqlCommand("sp_DanhSachDocGia_repeatableread_solving", con);
+            SqlCommand cmd = new SqlCommand("sp_DanhSachDocGia", con);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataReader dr_DocGia = cmd.ExecuteReader();
 
@@ -47,12 +47,6 @@ namespace Library.Controllers
             return listDocGia;
         }
 
-
-        public bool updateDocGia(int id, string Ho, string TenLot, string Ten, string SoNha,
-                            string Duong, string Quan, string DienThoai)
-        {
-            return true;
-        }
 
 
 

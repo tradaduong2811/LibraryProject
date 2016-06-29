@@ -64,7 +64,7 @@ namespace Library
                 dgvMuon.DataSource = MuonController.loadDocGiaMuonSach();
                 dgvMuon.Columns[0].HeaderText = "Isbn";
                 dgvMuon.Columns[0].Width = 50;
-                dgvMuon.Columns[1].HeaderText = "Mã ts";
+                dgvMuon.Columns[1].HeaderText = "Mã đọc giả";
                 dgvMuon.Columns[1].Width = 70;
                 dgvMuon.Columns[2].HeaderText = "Tựa sách";
                 dgvMuon.Columns[2].Width = 100;
@@ -166,6 +166,8 @@ namespace Library
         {
             // load lại sách
             loadSach();
+            loadDocGiaMuonSach();
+            
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)

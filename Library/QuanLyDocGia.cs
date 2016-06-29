@@ -18,6 +18,7 @@ namespace Library
             InitializeComponent();
             KhoiTao();
             loadDocGia();
+            loadDocGiaDangKyMuon();
         }
 
         private void KhoiTao()
@@ -34,6 +35,7 @@ namespace Library
         /// </summary>
 
         DocGiaController DocGiaController = new DocGiaController();
+        DangKyController DangKyController = new DangKyController();
 
         public void loadDocGia()
         {
@@ -66,6 +68,25 @@ namespace Library
 
             }
             
+        }
+
+        public void loadDocGiaDangKyMuon()
+        {
+            if (DocGiaController.loadDocGia() == null)
+            {
+                MessageBox.Show("Xảy ra lỗi lấy dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                dgvDangKy.DataSource = DangKyController.loadDocGiaDangKySach();
+                dgvDangKy.Columns[0].HeaderText = "Isbn";
+                dgvDangKy.Columns[0].Width = 50;
+                dgvDangKy.Columns[1].HeaderText = "Mã đọc giả";
+                dgvDangKy.Columns[1].Width = 80;
+                dgvDangKy.Columns[2].HeaderText = "Tên";
+                dgvDangKy.Columns[2].Width = 150;
+
+            }
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)
