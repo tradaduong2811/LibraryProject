@@ -41,5 +41,18 @@ namespace Library
             QuanLyDocGia MH_QuanLyDocGia = new QuanLyDocGia();
             MH_QuanLyDocGia.Show();
         }
+
+        private void backUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Backup back = new Backup();
+            back.Show();
+        }
+
+        private void restoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Restore re = new Restore();
+            re.Show();
+        }
     }
 }

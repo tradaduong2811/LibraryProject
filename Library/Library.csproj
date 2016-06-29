@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.SmoExtended, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup.Designer.cs">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\DangKyController.cs" />
     <Compile Include="Controllers\DocGiaController.cs" />
     <Compile Include="Controllers\MuonController.cs" />
@@ -86,6 +96,12 @@
     <Compile Include="QuanLyDocGia.Designer.cs">
       <DependentUpon>QuanLyDocGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Restore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Restore.Designer.cs">
+      <DependentUpon>Restore.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemDocGia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +114,9 @@
     <Compile Include="TraSach.Designer.cs">
       <DependentUpon>TraSach.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Backup.resx">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DangKySach.resx">
       <DependentUpon>DangKySach.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyDocGia.resx">
       <DependentUpon>QuanLyDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Restore.resx">
+      <DependentUpon>Restore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemDocGia.resx">
       <DependentUpon>ThemDocGia.cs</DependentUpon>

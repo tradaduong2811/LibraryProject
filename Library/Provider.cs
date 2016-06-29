@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class Provider
+    public class Provider
     {
         public SqlConnection con;
 
