@@ -55,9 +55,11 @@
     <Compile Include="Backup.Designer.cs">
       <DependentUpon>Backup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\BackupController.cs" />
     <Compile Include="Controllers\DangKyController.cs" />
     <Compile Include="Controllers\DocGiaController.cs" />
     <Compile Include="Controllers\MuonController.cs" />
+    <Compile Include="Controllers\RestoreController.cs" />
     <Compile Include="Controllers\SachController.cs" />
     <Compile Include="DangKySach.cs">
       <SubType>Form</SubType>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,7 @@ namespace Library
 {
     public partial class Restore : Form
     {
-        string sql;
-        SqlCommand command;
-        SqlConnection conn;
-        string strConnectN = @"Data Source=.\SQLEXPRESS ; Initial Catalog=QUAN_LY_THU_VIEN;Integrated Security=True";
+        RestoreController rescontrl = new RestoreController();
         public Restore()
         {
             InitializeComponent();
@@ -37,26 +35,20 @@ namespace Library
         {
             try
             {
-                conn = new SqlConnection(strConnectN);
-                conn.Open();
-                sql = "USE master;";
-                sql += "Alter Database QUAN_LY_THU_VIEN Set SINGLE_USER WITH ROLLBACK IMMEDIATE;";
-                sql += "Restore Database QUAN_LY_THU_VIEN FROM Disk = '" + txtPath.Text + "' WITH REPLACE;";
-                command = new SqlCommand(sql, conn);
-                command.ExecuteNonQuery();
-
-                string Alter2 = @"ALTER DATABASE [QUAN_LY_THU_VIEN] SET Multi_User";
-                SqlCommand Alter2Cmd = new SqlCommand(Alter2, conn);
-                Alter2Cmd.ExecuteNonQuery();
-                conn.Close();
-                conn.Dispose();
+                if (txtPath.Text == "")
+                {
+                    MessageBox.Show("Chọn đường dẫn");
+                }
+                rescontrl.Restore(txtPath.Text);
                 this.Close();
                 MessageBox.Show("Restore Database Successfully");
+                SqlConnection con = new SqlConnection();
+                con = Provider.ConnectionData();
+                con.Close();
+                con.Dispose();
             }
             catch (Exception)
             {
-                
-                throw;
             }
         }
     }

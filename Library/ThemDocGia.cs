@@ -41,8 +41,6 @@ namespace Library
                     MessageBox.Show("Thêm đọc giả người lớn thành công.");
                     Close();
                 }
-                    
-
                 else
                     MessageBox.Show("thêm thất bại");
             }
